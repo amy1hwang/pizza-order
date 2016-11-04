@@ -1,4 +1,9 @@
 //business logic
+function Info(pizza, address) {
+  this.pizza = pizza;
+  this.address = address;
+}
+
 function Pizza(size, sauce, meat, nonMeat, address) {
   this.size = size;
   this.sauce = sauce;
@@ -22,9 +27,12 @@ $(document).ready(function() {
   $("form.pizza").submit(function(event) {
     event.preventDefault();
 
+    var btn = $(this).find("button#pizza-submit[type=submit]:focus" );
     var size =  $("input:radio[name=size]:checked").val();
     var sauce = $("input:radio[name=sauce]:checked").val();
-    var newPizza = new Pizza(size, sauce)
+
+    var newPizza = new Pizza(size, sauce);
+
     $("input:checkbox[name=meat]:checked").each(function(){
       var meat = $(this).val();
       newPizza.meates.push(meat);
@@ -35,5 +43,19 @@ $(document).ready(function() {
     });
 
     console.log(newPizza)
+  });
+
+  $("form.address").submit(function(event) {
+    event.preventDefault();
+    var btn = $(this).find("button#address-submit[type=submit]:focus" );
+    var first =  $("input#FirstName").val();
+    var last = $("input#LastName").val();
+    var street = $("input#StreetAddress").val();
+    var city = $("input#city").val();
+    var state = $("select#State").val();
+
+    var newAddress= new Address(first, last, street, city, state);
+
+    console.log(newAddress)
   });
 });
