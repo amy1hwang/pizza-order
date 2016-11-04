@@ -17,7 +17,7 @@
           <h4 class="size-h4">Choose a size of your pizza.</h4>
           <div class="radio">
             <label>
-              <input type="radio" name="size" value="small">
+              <input type="radio" name="size" value="small" checked>
               Small(10")
             </label>
           </div>
@@ -33,14 +33,14 @@
               Large(14")
             </label>
           </div>
-          <button type="button" id="size-submit">Next</button>
+          <h4 id="size-submit">Next</h4>
         </div>
 
         <div class="sauce">
           <h4 class="customize-h4">Choose a sauce.</h4>
           <div class="radio">
             <label>
-              <input type="radio" name="sauce" value="Marinara-sauce">
+              <input type="radio" name="sauce" value="Marinara-sauce" checked>
               Marinara Sauce
             </label>
           </div>
@@ -62,8 +62,8 @@
               Pesto
             </label>
           </div>
-          <button type="button" id="size-edit">Back</button>
-          <button type="button" id="sauce-submit">Next</button>
+          <h4 id="size-edit">Back</h4>
+          <h4 id="sauce-submit">Next</h4>
         </div>
 
         <div class="topping">
@@ -96,9 +96,9 @@
             <input type="checkbox" name="non-meat" value="garlic">garlic<br>
             <input type="checkbox" name="non-meat" value="artichokes">artichokes<br>
           </div>
-          <button type="button" id="sauce-edit">Back</button>
-          <button type="submit" class="btn" id="pizza-submit">Next</button>
+          <h4 id="sauce-edit">Back</h4>
         </div>
+        <button type="submit" id="pizza-submit">Address</button>
       </form>
 
       <form class="address">
@@ -167,31 +167,27 @@
         </select>
         <label for="ZipCode">Zip Code</label>
         <input class="ZipCode" class="form-control" type="text">
-        <button type="button" id="pizza-edit">Back</button>
+        <h4 id="pizza-edit">Edit My Pizza</h4>
         <button type="submit" class="btn" id="address-submit">Almost Done!</button>
       </form>
 
       <div class="confirmation">
         <h3>
         Here is the information you have entered.
-       </h3>
-       <!-- size -->
-       <div class="size-confirm">
-         <p></p>
-         <button type="click" id="size-edit">Edit</button>
-       </div>
-       <!-- topping -->
-       <div class="customize-confirm">
-         <ul></ul>
-         <button type="submit" id="customize-edit">Edit</button>
-       </div>
-       <!-- address -->
-       <div class="address-confirm">
-         <p>
-         </p>
-        <button type="click" id="address-edit">Edit</button>
-       </div>
-       <button type="submit" id="check-out">Check Out</button>
+        </h3>
+        <!-- pizza -->
+        <h4>Pizza</h4>
+        <p>Size: <spane class="size-confirm"></span></p>
+        <p>Sauce: <spane class="sauce-confirm"></span></p>
+        <p>Toppings: <spane class="topping-confirm"></span></p>
+        <button type="submit" id="customize-edit">Edit</button>
+        <br>
+        <p>Name: <spane class="name-confirm"></span></p>
+        <p>Address: <spane class="address-confirm"></span></p>
+        <h4 id="address-edit">Edit</h4>
+        </div>
+        <br>
+        <button type="submit" id="check-out">Check Out</button>
       </div>
 
      <div class="check-out">
