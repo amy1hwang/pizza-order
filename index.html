@@ -10,26 +10,26 @@
   <body>
     <div class="container">
       <h1>Amy's Pizzaria</h1>
-      <h3>order your pizza here.</h3>
 
       <form class="pizza">
+        <h3>order your pizza here.</h3>
         <div class="size">
           <h4 class="size-h4">Choose a size of your pizza.</h4>
           <div class="radio">
             <label>
-              <input type="radio" name="size" value="small" checked>
+              <input type="radio" name="size" value="7" checked>
               Small(10")
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="size" value="medium">
+              <input type="radio" name="size" value="10">
               Medium(12")
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="size" value="large">
+              <input type="radio" name="size" value="13">
               Large(14")
             </label>
           </div>
@@ -97,6 +97,13 @@
             <input type="checkbox" name="non-meat" value="artichokes">artichokes<br>
           </div>
           <h4 id="sauce-edit">Back</h4>
+          <h4 id="topping-submit">Next</h4>
+        </div>
+
+        <div class="pizza-name">
+          <label for="pizzaName">Name this pizza.</label>
+          <input id="pname" class="form-control" type="text">
+          <h4 id="topping-edit">Back</h4>
         </div>
         <button type="submit" id="pizza-submit">Address</button>
       </form>
@@ -166,25 +173,33 @@
           <option value="WY">Wyoming</option>
         </select>
         <label for="ZipCode">Zip Code</label>
-        <input class="ZipCode" class="form-control" type="text">
+        <input id="ZipCode" class="form-control" type="text">
         <h4 id="pizza-edit">Edit My Pizza</h4>
         <button type="submit" class="btn" id="address-submit">Almost Done!</button>
       </form>
-
-      <div class="confirmation">
+      <div class="pizza-info">
         <h3>
-        Here is the information you have entered.
+          Here is the information you have entered.
         </h3>
-        <!-- pizza -->
+        <ul id="pizza-list">
+        </ul>
+      </div>
+      <div class="confirmation">
         <h4>Pizza</h4>
         <p>Size: <spane class="size-confirm"></span></p>
         <p>Sauce: <spane class="sauce-confirm"></span></p>
-        <p>Toppings: <spane class="topping-confirm"></span></p>
-        <button type="submit" id="customize-edit">Edit</button>
+        <p>Topping:</p>
+        <p>Meat:<p>
+        <ul class="meat-confirm">
+        </ul>
+        <p>Non-Meat:</p>
+        <ul class="non-meat-confirm">
+        </ul>
+        <p>Cost: <spane class="cost-confirm"></span></p>
         <br>
         <p>Name: <spane class="name-confirm"></span></p>
         <p>Address: <spane class="address-confirm"></span></p>
-        <h4 id="address-edit">Edit</h4>
+        <h4 id="edit">Add More Pizza</h4>
         </div>
         <br>
         <button type="submit" id="check-out">Check Out</button>

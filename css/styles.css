@@ -1,3 +1,3 @@
-form.address, .sauce, .topping {
+.address, .sauce, .topping, .confirmation, .check-out, .pizza-name, .pizza-info {
   display: none;
 }
