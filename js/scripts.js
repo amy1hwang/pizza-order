@@ -100,9 +100,8 @@ $(document).ready(function() {
       newPizza.nonMeats.push(nonMeat);
     });
 
-    //pizza done, move one to address
+    //pizza done, move one to confirmation
     $("form.pizza").slideUp();
-    $("form.address").slideDown();
 
     //output pizza names
     $("ul#pizza-list").append("<li><span class='pizza-names'>" + newPizza.pizzaName + "</span></li>");
@@ -118,20 +117,34 @@ $(document).ready(function() {
       }
     }
 
-    //output
-    $(".size-confirm").text(sizeName);
-    $(".sauce-confirm").text(newPizza.sauce);
-    $(".meat-confirm").append("<li>" + newPizza.meats + "</li>");
-    $(".non-meat-confirm").append("<li>" + newPizza.nonMeats + "</li>");
-    $(".cost-confirm").text(newPizza.cost());
 
+    $(".pizza-info").show();
+    $(".pizza-names").last().click(function() {
+      $(".size-confirm").text(sizeName);
+      $(".sauce-confirm").text(newPizza.sauce);
+      $(".meat-confirm").append("<li>" + newPizza.meats + "</li>");
+      $(".non-meat-confirm").append("<li>" + newPizza.nonMeats + "</li>");
+      $(".cost-confirm").text(newPizza.cost());
+      $(".confirmation").show();
+
+      $("h4#add").click(function() {
+        $("form.pizza").show();
+        $(".pizza-name").hide();
+        $(".size").slideDown();
+        $(".confirmation").slideUp();
+      });
+
+      $("h4#confirmation-submit").click(function() {
+        $(".confirmation").slideUp();
+        $("form.address").slideDown();
+      });
+    });
   });
 
 
   $("form.address").submit(function(event) {
     event.preventDefault();
     var btn = $(this).find("button#address-submit[type=submit]:focus");
-
 
     var first =  $("input#FirstName").val();
     var last = $("input#LastName").val();
@@ -145,22 +158,9 @@ $(document).ready(function() {
     console.log(newAddress);
 
     $("form.address").slideUp();
-
-    $(".pizza-info").show();
-    $(".pizza-names").last().click(function() {
-      $(".confirmation").show();
-      $(".name-confirm").text(newAddress.fullName());
-      $(".address-confirm").text(newAddress.fullAddress());
-
-      $("h4#edit").click(function() {
-        $("input#pname").val("");
-        $("form.pizza").show();
-        $(".pizza-name").hide();
-        $(".size").slideDown();
-        $(".pizza-info").slideUp();
-        $(".confirmation").slideUp();
-      });
-    });
+    $(".check-out").slideDown();
+    $(".name-check-out").text(newAddress.fullName());
+    $(".address-check-out").text(newAddress.fullAddress());
 
   });
 });

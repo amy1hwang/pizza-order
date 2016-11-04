@@ -105,8 +105,35 @@
           <input id="pname" class="form-control" type="text">
           <h4 id="topping-edit">Back</h4>
         </div>
-        <button type="submit" id="pizza-submit">Address</button>
+        <button type="submit" id="pizza-submit">Confirm</button>
       </form>
+
+      <div class="pizza-info">
+        <h3>
+          Here is the information you have entered.
+        </h3>
+        <ul id="pizza-list">
+        </ul>
+      </div>
+
+      <div class="confirmation">
+        <h4>Pizza</h4>
+        <p>Size: <spane class="size-confirm"></span></p>
+        <p>Sauce: <spane class="sauce-confirm"></span></p>
+        <p>Topping:</p>
+        <p>Meat:<p>
+        <ul class="meat-confirm">
+        </ul>
+        <p>Non-Meat:</p>
+        <ul class="non-meat-confirm">
+        </ul>
+        <p>Cost: <spane class="cost-confirm"></span></p>
+        <br>
+        <h4 id="add">Add More Pizza</h4>
+        <h4 id="confirmation-submit">Final Step!</h4>
+      </div>
+
+      <br>
 
       <form class="address">
         <h4 class="address-h4">Enter your address.</h4>
@@ -174,44 +201,19 @@
         </select>
         <label for="ZipCode">Zip Code</label>
         <input id="ZipCode" class="form-control" type="text">
-        <h4 id="pizza-edit">Edit My Pizza</h4>
-        <button type="submit" class="btn" id="address-submit">Almost Done!</button>
-      </form>
-      <div class="pizza-info">
-        <h3>
-          Here is the information you have entered.
-        </h3>
-        <ul id="pizza-list">
-        </ul>
-      </div>
-      <div class="confirmation">
-        <h4>Pizza</h4>
-        <p>Size: <spane class="size-confirm"></span></p>
-        <p>Sauce: <spane class="sauce-confirm"></span></p>
-        <p>Topping:</p>
-        <p>Meat:<p>
-        <ul class="meat-confirm">
-        </ul>
-        <p>Non-Meat:</p>
-        <ul class="non-meat-confirm">
-        </ul>
-        <p>Cost: <spane class="cost-confirm"></span></p>
-        <br>
-        <p>Name: <spane class="name-confirm"></span></p>
-        <p>Address: <spane class="address-confirm"></span></p>
-        <h4 id="edit">Add More Pizza</h4>
-        </div>
-        <br>
         <button type="submit" id="check-out">Check Out</button>
+      </form>
+
+      <div class="check-out">
+        <h1>
+          Thank you <span class="fisrt-name"></span> for choosing Amy's Pizzaria!<br>
+          Your order#00001 is being prepared.
+        </h1>
+        <p>Name: <spane class="name-check-out"></span></p>
+        <p>Address: <spane class="address-check-out"></span></p>
+        <p>Total Cost: <spane class="cost-confirm"></span></p>
       </div>
-
-     <div class="check-out">
-      <h1>
-        Thank you <span class="fisrt-name"></span> for choosing Amy's Pizzaria!<br>
-        Your order#00001 is being prepared.
-      </h1>
-     </div>
-
     </div>
+
   </body>
 </html>
