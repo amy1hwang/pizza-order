@@ -14,7 +14,7 @@
 
       <form class="pizza">
         <div class="size">
-          <h4 class="size-h4">Choose the size of your pizza.</h4>
+          <h4 class="size-h4">Choose a size of your pizza.</h4>
           <div class="radio">
             <label>
               <input type="radio" name="size" value="small">
@@ -33,75 +33,72 @@
               Large(14")
             </label>
           </div>
-        <!-- if nothing is checked, alert-->
           <button type="button" id="size-submit">Next</button>
         </div>
-        <div class="customize">
-          <h4 class="customize-h4">Customize</h4>
-          <div class="sauces">
-            <div class="col-xs-4">
-              <label for="sauce">Choose sauce.</label><br>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="sauce" value="Marinara-sauce">
-                  Marinara Sauce
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="sauce" value="bbq">
-                  BBQ Sauce
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="sauce" value="white">
-                  Garlic Parmesan White Sauce
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="sauce" value="pesto">
-                  Pesto
-                </label>
-              </div>
-            </div>
+
+        <div class="sauce">
+          <h4 class="customize-h4">Choose a sauce.</h4>
+          <div class="radio">
+            <label>
+              <input type="radio" name="sauce" value="Marinara-sauce">
+              Marinara Sauce
+            </label>
           </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="sauce" value="bbq">
+              BBQ Sauce
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="sauce" value="white">
+              Garlic Parmesan White Sauce
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="sauce" value="pesto">
+              Pesto
+            </label>
+          </div>
+          <button type="button" id="size-edit">Back</button>
+          <button type="button" id="sauce-submit">Next</button>
+        </div>
+
+        <div class="topping">
           <div class="meat-toppings">
-            <div class="col-xs-4">
-              <label for="meats">Choose meats.</label><br>
-              <input type="checkbox" name="meat" value="pepperoni">Pepperoni<br>
-              <input type="checkbox" name="meat" value="italian-sausage">Italian Sausage<br>
-              <input type="checkbox" name="meat" value="philly-steak">Philly Steak<br>
-              <input type="checkbox" name="meat" value="bacon">Bacon<br>
-              <input type="checkbox" name="meat" value="chicken">Chicken<br>
-              <input type="checkbox" name="meat" value="beef">Beef<br>
-              <input type="checkbox" name="meat" value="ham">Ham<br>
-              <input type="checkbox" name="meat" value="salami">Salami<br>
-            </div>
+            <h4 class="size-h4">Choose toppings.</h4>
+            <label for="meats">meats</label><br>
+            <input type="checkbox" name="meat" value="pepperoni">Pepperoni<br>
+            <input type="checkbox" name="meat" value="italian-sausage">Italian Sausage<br>
+            <input type="checkbox" name="meat" value="philly-steak">Philly Steak<br>
+            <input type="checkbox" name="meat" value="bacon">Bacon<br>
+            <input type="checkbox" name="meat" value="chicken">Chicken<br>
+            <input type="checkbox" name="meat" value="beef">Beef<br>
+            <input type="checkbox" name="meat" value="ham">Ham<br>
+            <input type="checkbox" name="meat" value="salami">Salami<br>
           </div>
           <div class="non-meat-toppings">
-            <div class="col-xs-4">
-              <label for="meats">Choose non-meats.</label><br>
-              <input type="checkbox" name="non-meat" value="cheddar">Cheddar Cheese<br>
-              <input type="checkbox" name="non-meat" value="Parmesan">Permesan Asiago<br>
-              <input type="checkbox" name="non-meat" value="feta">Feta Cheese<br>
-              <input type="checkbox" name="non-meat" value="banana-peppers">Banana Peppers<br>
-              <input type="checkbox" name="non-meat" value="green-peppers">Green Peppers<br>
-              <input type="checkbox" name="non-meat" value="red-peppers">Red Peppers<br>
-              <input type="checkbox" name="non-meat" value="jalapeno-peppers">Jalapeno Peppers<br>
-              <input type="checkbox" name="non-meat" value="olives">Olives<br>
-              <input type="checkbox" name="non-meat" value="mushrooms">Mushrooms<br>
-              <input type="checkbox" name="non-meat" value="onions">onions<br>
-              <input type="checkbox" name="non-meat" value="pineapple">Pineapple<br>
-              <input type="checkbox" name="non-meat" value="tomatoes">tomatoes<br>
-              <input type="checkbox" name="non-meat" value="garlic">garlic<br>
-              <input type="checkbox" name="non-meat" value="artichokes">artichokes<br>
-            </div>
+            <label for="meats">Choose non-meats.</label><br>
+            <input type="checkbox" name="non-meat" value="cheddar">Cheddar Cheese<br>
+            <input type="checkbox" name="non-meat" value="Parmesan">Permesan Asiago<br>
+            <input type="checkbox" name="non-meat" value="feta">Feta Cheese<br>
+            <input type="checkbox" name="non-meat" value="banana-peppers">Banana Peppers<br>
+            <input type="checkbox" name="non-meat" value="green-peppers">Green Peppers<br>
+            <input type="checkbox" name="non-meat" value="red-peppers">Red Peppers<br>
+            <input type="checkbox" name="non-meat" value="jalapeno-peppers">Jalapeno Peppers<br>
+            <input type="checkbox" name="non-meat" value="olives">Olives<br>
+            <input type="checkbox" name="non-meat" value="mushrooms">Mushrooms<br>
+            <input type="checkbox" name="non-meat" value="onions">onions<br>
+            <input type="checkbox" name="non-meat" value="pineapple">Pineapple<br>
+            <input type="checkbox" name="non-meat" value="tomatoes">tomatoes<br>
+            <input type="checkbox" name="non-meat" value="garlic">garlic<br>
+            <input type="checkbox" name="non-meat" value="artichokes">artichokes<br>
           </div>
+          <button type="button" id="sauce-edit">Back</button>
+          <button type="submit" class="btn" id="pizza-submit">Next</button>
         </div>
-        <button type="submit" class="btn" id="pizza-submit">Next</button>
-
       </form>
 
       <form class="address">
@@ -170,6 +167,7 @@
         </select>
         <label for="ZipCode">Zip Code</label>
         <input class="ZipCode" class="form-control" type="text">
+        <button type="button" id="pizza-edit">Back</button>
         <button type="submit" class="btn" id="address-submit">Almost Done!</button>
       </form>
 
