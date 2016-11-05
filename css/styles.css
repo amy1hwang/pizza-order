@@ -1,3 +1,15 @@
+
 .address, .sauce, .topping, .confirmation, .check-out, .pizza-name, .pizza-info {
   display: none;
+}
+
+h1 {
+  color: red;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+img {
+  text-align: center;
+  width: 600px;
 }
