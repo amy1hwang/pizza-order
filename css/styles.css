@@ -1,5 +1,5 @@
 
-.address, .sauce, .topping, .confirmation, .check-out, .pizza-name, .pizza-info {
+.address, .sauce, .topping, .confirmation, .check-out, .pizza-name, .pizza-detail{
   display: none;
 }
 
