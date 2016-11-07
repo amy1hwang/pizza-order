@@ -31,10 +31,20 @@ Address.prototype.fullAddress = function() {
 
 
 $(document).ready(function() {
+
+  $("h1.header").click(function() {
+    location.reload();
+  });
+  var myPizzas = [];
+
   //move on sauce
   $("h4#size-submit").click(function() {
+    if ($('[name="size"]').is(':checked')) {
       $(".size").slideUp();
       $(".sauce").slideDown();
+    } else {
+      alert("Select a size.")
+    }
   });
 
   //go back to size
@@ -45,8 +55,12 @@ $(document).ready(function() {
 
   //move on to topping
   $("h4#sauce-submit").click(function() {
+    if ($('[name="sauce"]').is(':checked')) {
       $(".sauce").slideUp();
       $(".topping").slideDown();
+    } else {
+      alert("Select a sauce.")
+    }
   });
 
   //go back to sauce
@@ -77,6 +91,7 @@ $(document).ready(function() {
   //when pizza submit button is clicked
   $("form.pizza").submit(function(event) {
     event.preventDefault();
+
     var btn = $(this).find("button#pizza-submit[type=submit]:focus" );
 
     var size =  $("input:radio[name=size]:checked").val();
@@ -89,10 +104,7 @@ $(document).ready(function() {
 
     $("input:checkbox[name=meat]:checked").each(function(){
       var meat = $(this).val();
-      console.log(meat)
       newPizza.meats.push(meat);
-      console.log(newPizza.meats);
-      console.log(newPizza.meats.length)
     });
 
     $("input:checkbox[name=non-meat]:checked").each(function(){
@@ -100,45 +112,70 @@ $(document).ready(function() {
       newPizza.nonMeats.push(nonMeat);
     });
 
-    //pizza done, move one to confirmation
-    $("form.pizza").slideUp();
+    if (name === "") {
+      alert("You did not name the pizza.")
+    } else {
+      //pizza done, move one to confirmation
+      $("form.pizza").slideUp();
+      //output pizza names
+      $("ul#pizza-list").append("<li class='pizza'><span class='pizza-names'>" + newPizza.pizzaName + "</span></li>");
 
-    //output pizza names
-    $("ul#pizza-list").append("<li><span class='pizza-names'>" + newPizza.pizzaName + "</span></li>");
-
-    //change the size values from number to strings
-    var sizeName = function() {
-      if (size === "7") {
-        return "Small"
-      } else if (size === "10") {
-        return "Medium"
-      } else if (size === "13") {
-        return "large"
+      //change the size values from number to strings
+      var sizeName = function() {
+        if (size === "7") {
+          return "Small"
+        } else if (size === "10") {
+          return "Medium"
+        } else if (size === "13") {
+          return "large"
+        }
       }
-    }
-
-
-    $(".pizza-info").show();
-    $(".pizza-names").last().click(function() {
-      $(".size-confirm").text(sizeName);
-      $(".sauce-confirm").text(newPizza.sauce);
-      $(".meat-confirm").append("<li>" + newPizza.meats + "</li>");
-      $(".non-meat-confirm").append("<li>" + newPizza.nonMeats + "</li>");
-      $(".cost-confirm").text(newPizza.cost());
-      $(".confirmation").show();
 
       $("h4#add").click(function() {
+        $("input:radio[name=size]").prop("checked", '');
+        $("input:radio[name=sauce]").prop("checked", '');
+        $('.meat-toppings input:checked').prop('checked', '');
+        $('.non-meat-toppings input:checked').prop('checked', '');
+        $("#pname").val("");
         $("form.pizza").show();
         $(".pizza-name").hide();
         $(".size").slideDown();
         $(".confirmation").slideUp();
+        $(".meat-confirm").text("");
+        $(".non-meat-confirm").text("");
+      });
+
+
+      var meatList = "";
+      for(var i = 0; i < newPizza.meats.length; i++) {
+        meatList += "<li>" + newPizza.meats[i] + "</li>"
+      }
+
+      var nonMeatList = "";
+      for(var i = 0; i < newPizza.nonMeats.length; i++) {
+        nonMeatList += "<li>" + newPizza.nonMeats[i] + "</li>";
+      }
+
+      myPizzas.push(newPizza);
+
+      $(".pizza-detail").show();
+      $(".pizza-names").last().click(function() {
+        $(".size-confirm").text(sizeName);
+        $(".sauce-confirm").text(newPizza.sauce);
+        $(".meat-confirm").html(meatList);
+        $(".non-meat-confirm").html(nonMeatList);
+        $(".cost-confirm").text(newPizza.cost());
+        $(".confirmation").show();
       });
 
       $("h4#confirmation-submit").click(function() {
+        $("form.pizza").slideUp();
+        $(".pizza-detail").slideUp();
         $(".confirmation").slideUp();
         $("form.address").slideDown();
       });
-    });
+    };
+
   });
 
 
@@ -153,14 +190,23 @@ $(document).ready(function() {
     var state = $("select#State").val();
     var zipcode = $("input#ZipCode").val();
 
-    var newAddress= new Address(first, last, street, city, state, zipcode);
+    //setting vars for address object properties
+    var newAddress = new Address(first, last, street, city, state, zipcode);
 
-    console.log(newAddress);
+    var totalCost = 0
+    for(var i = 0; i < myPizzas.length; i++) {
+      var myPizza = myPizzas[i];
+      totalCost += myPizza.cost();
+    };
 
-    $("form.address").slideUp();
-    $(".check-out").slideDown();
-    $(".name-check-out").text(newAddress.fullName());
-    $(".address-check-out").text(newAddress.fullAddress());
-
+    if (first === "" || last === "" || street === "" || city === "" || zipcode === "") {
+      alert("Enter the address.")
+    } else {
+      $("form.address").slideUp();
+      $(".check-out").slideDown();
+      $(".name-check-out").text(newAddress.fullName());
+      $(".address-check-out").text(newAddress.fullAddress());
+      $(".cost-check-out").text(totalCost);
+    };
   });
 });

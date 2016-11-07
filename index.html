@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
@@ -9,11 +10,11 @@
   </head>
   <body>
     <div class="container">
-      <h1>Amy's Pizzaria</h1>
-      <img src="http://manhattanpizzaplacehga.com/wp-content/uploads/2016/03/wafswectpmbr0zmug9ly.jpg">
+      <h1 class="header">Amy's Pizzaria</h1>
+      <img src="pizza.png">
 
       <form class="pizza">
-        <h3>order your pizza here.</h3>
+        <h3>Order your pizza here.</h3>
         <div class="size">
           <h4 class="size-h4">Choose a size of your pizza.</h4>
           <div class="radio">
@@ -34,7 +35,9 @@
               Large(14")
             </label>
           </div>
-          <h4 id="size-submit">Next</h4>
+          <div>
+            <h4 class="click btn" id="size-submit">Next</h4>
+          </div>
         </div>
 
         <div class="sauce">
@@ -63,76 +66,119 @@
               Pesto
             </label>
           </div>
-          <h4 id="size-edit">Back</h4>
-          <h4 id="sauce-submit">Next</h4>
+          <h4 class="click btn" id="size-edit">Back</h4>
+          <h4 class="click btn" id="sauce-submit">Next</h4>
         </div>
 
         <div class="topping">
           <div class="meat-toppings">
             <h4 class="size-h4">Choose toppings.</h4>
-            <label for="meats">meats</label><br>
-            <input type="checkbox" name="meat" value="pepperoni">Pepperoni<br>
-            <input type="checkbox" name="meat" value="italian-sausage">Italian Sausage<br>
-            <input type="checkbox" name="meat" value="philly-steak">Philly Steak<br>
-            <input type="checkbox" name="meat" value="bacon">Bacon<br>
-            <input type="checkbox" name="meat" value="chicken">Chicken<br>
-            <input type="checkbox" name="meat" value="beef">Beef<br>
-            <input type="checkbox" name="meat" value="ham">Ham<br>
-            <input type="checkbox" name="meat" value="salami">Salami<br>
+            <h4 class="meats"><em>meats</em></h4>
+            <label>
+              <input type="checkbox" name="meat" value="Bacon"> Bacon
+            </label><br>
+            <label>
+              <input type="checkbox" name="meat" value="Beef"> Beef
+            </label><br>
+            <label>
+              <input type="checkbox" name="meat" value="Chicken"> Chicken
+            </label><br>
+            <label>
+              <input type="checkbox" name="meat" value="Ham"> Ham
+            </label><br>
+            <label>
+              <input type="checkbox" name="meat" value="Italian Sausage"> Italian Sausage
+            </label><br>
+            <label>
+              <input type="checkbox" name="meat" value="Pepperoni"> Pepperoni
+            </label><br>
+            <label>
+              <input type="checkbox" name="meat" value="Philly Steak"> Philly Steak
+            </label><br>
+            <label>
+              <input type="checkbox" name="meat" value="Salami"> Salami
+            </label><br>
           </div>
           <br>
           <div class="non-meat-toppings">
-            <label for="meats">Choose non-meats.</label><br>
-            <input type="checkbox" name="non-meat" value="cheddar">Cheddar Cheese<br>
-            <input type="checkbox" name="non-meat" value="Parmesan">Permesan Asiago<br>
-            <input type="checkbox" name="non-meat" value="feta">Feta Cheese<br>
-            <input type="checkbox" name="non-meat" value="banana-peppers">Banana Peppers<br>
-            <input type="checkbox" name="non-meat" value="green-peppers">Green Peppers<br>
-            <input type="checkbox" name="non-meat" value="red-peppers">Red Peppers<br>
-            <input type="checkbox" name="non-meat" value="jalapeno-peppers">Jalapeno Peppers<br>
-            <input type="checkbox" name="non-meat" value="olives">Olives<br>
-            <input type="checkbox" name="non-meat" value="mushrooms">Mushrooms<br>
-            <input type="checkbox" name="non-meat" value="onions">onions<br>
-            <input type="checkbox" name="non-meat" value="pineapple">Pineapple<br>
-            <input type="checkbox" name="non-meat" value="tomatoes">tomatoes<br>
-            <input type="checkbox" name="non-meat" value="garlic">garlic<br>
-            <input type="checkbox" name="non-meat" value="artichokes">artichokes<br>
+            <h4 class="non-meats"><em>non-meats</em></h4>
+            <label>
+              <input type="checkbox" name="non-meat" value="Artichokes"> Artichokes
+            </label><br>
+            <label>
+              <input type="checkbox" name="non-meat" value="Banana Peppers"> Banana Peppers
+            </label><br>
+            <label>
+              <input type="checkbox" name="non-meat" value="Cheddar Cheese"> Cheddar Cheese
+            </label><br>
+            <label>
+              <input type="checkbox" name="non-meat" value="Feta Cheese"> Feta Cheese
+            </label><br>
+            <label>
+              <input type="checkbox" name="non-meat" value="Garlic"> Garlic
+            </label><br>
+            <label>
+              <input type="checkbox" name="non-meat" value="Green Peppers"> Green Peppers
+            </label><br>
+            <label>
+              <input type="checkbox" name="non-meat" value="Jalapeno Peppers"> Jalapeno Peppers
+            </label><br>
+            <label>
+              <input type="checkbox" name="non-meat" value="Mushrooms"> Mushrooms
+            </label><br>
+            <label>
+              <input type="checkbox" name="non-meat" value="Olives"> Olives
+            </label><br>
+            <label>
+              <input type="checkbox" name="non-meat" value="Onions"> Onions
+            </label><br>
+            <label>
+              <input type="checkbox" name="non-meat" value="Permesan Asiago"> Permesan Asiago
+            </label><br>
+            <label>
+              <input type="checkbox" name="non-meat" value="Pineapple"> Pineapple
+            </label><br>
+            <label>
+              <input type="checkbox" name="non-meat" value="Red Peppers"> Red Peppers
+            </label><br>
+            <label>
+              <input type="checkbox" name="non-meat" value="Tomatoes"> Tomatoes
+            </label><br>
           </div>
-          <h4 id="sauce-edit">Back</h4>
-          <h4 id="topping-submit">Next</h4>
+          <h4 class="click btn" id="sauce-edit">Back</h4>
+          <h4 class="click btn" id="topping-submit">Next</h4>
         </div>
 
         <div class="pizza-name">
           <label for="pizzaName">Name this pizza.</label>
           <input id="pname" class="form-control" type="text">
-          <h4 id="topping-edit">Back</h4>
+          <h4 class="click btn" id="topping-edit">Back</h4>
+
+          <button type="submit" class="btn" id="pizza-submit">Confirm</button>
         </div>
-        <button type="submit" id="pizza-submit">Confirm</button>
       </form>
 
-      <div class="pizza-info">
+      <div class="pizza-detail">
         <h3>
-          Here is the information you have entered.
+          Click the pizza name to view the detail of the pizza.
         </h3>
         <ul id="pizza-list">
         </ul>
+        <h4 class="click btn" id="add">Add More Pizza</h4>
+        <h4 class="click btn" id="confirmation-submit">Final Step!</h4>
       </div>
 
       <div class="confirmation">
-        <h4>Pizza</h4>
-        <p>Size: <spane class="size-confirm"></span></p>
-        <p>Sauce: <spane class="sauce-confirm"></span></p>
-        <p>Topping:</p>
-        <p>Meat:<p>
+        <p><strong>Size: </strong><spane class="size-confirm"></span></p>
+        <p><strong>Sauce: </strong><spane class="sauce-confirm"></span></p>
+        <p><strong>Topping:</strong></p>
+        <p><em>Meat:</em><p>
         <ul class="meat-confirm">
         </ul>
-        <p>Non-Meat:</p>
+        <p><em>Non-Meat:</em></p>
         <ul class="non-meat-confirm">
         </ul>
-        <p>Cost: <spane class="cost-confirm"></span></p>
-        <br>
-        <h4 id="add">Add More Pizza</h4>
-        <h4 id="confirmation-submit">Final Step!</h4>
+        <p><strong>Cost: </strong><spane class="cost-confirm"></span></p>
       </div>
 
       <br>
@@ -204,17 +250,17 @@
         <label for="ZipCode">Zip Code</label>
         <input id="ZipCode" class="form-control" type="text">
         <br>
-        <button type="submit" id="check-out">Check Out</button>
+        <button type="submit" class="btn" id="check-out">Check Out</button>
       </form>
 
       <div class="check-out">
-        <h1>
+        <h1 class="thank-you">
           Thank you <span class="fisrt-name"></span> for choosing Amy's Pizzaria!<br>
-          Your order#00001 is being prepared.
+          Your order is being prepared.
         </h1>
-        <p>Name: <spane class="name-check-out"></span></p>
-        <p>Address: <spane class="address-check-out"></span></p>
-        <p>Total Cost: <spane class="cost-confirm"></span></p>
+        <p><strong>Name: </strong><spane class="name-check-out"></span></p>
+        <p><strong>Address: </strong><spane class="address-check-out"></span></p>
+        <p><strong>Total Cost: </strong><spane class="cost-check-out"></span></p>
       </div>
     </div>
 
