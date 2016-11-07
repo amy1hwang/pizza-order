@@ -1,15 +1,68 @@
 
+body {
+  background-color: black;
+}
+
+
+*{
+  color: white;
+  font-family: monospace;
+}
+
 .address, .sauce, .topping, .confirmation, .check-out, .pizza-name, .pizza-detail{
   display: none;
 }
 
-h1 {
+h1.header {
+  font-family: 'Bungee Shade', cursive;
+  font-size: 50px;
   color: red;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+h1.header:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 img {
-  text-align: center;
-  width: 600px;
+  display: block;
+  border-radius: 10px;
+  width: 250px;
+}
+
+h4.btn {
+  font-weight: bold;
+  background-color: #f4ce42;
+  display: inline-block;
+  cursor: pointer;
+}
+
+button.btn {
+  display: block;
+  font-weight: bold;
+  background-color: #f49842;
+  margin-top: 20px;
+}
+
+h4.click:hover {
+  text-decoration: underline;
+}
+
+li.pizza:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.confirmation {
+  margin-top: 25px;
+  padding:10px;
+  border: 1px solid #f4ce42;
+  border-radius: 10px;
+}
+
+.thank-you {
+  color: #f49842;
+  text-decoration: underline;
 }

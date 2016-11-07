@@ -32,9 +32,10 @@ Address.prototype.fullAddress = function() {
 
 $(document).ready(function() {
 
-  myPizzas = [];
-
-
+  $("h1.header").click(function() {
+    location.reload();
+  });
+  var myPizzas = [];
 
   //move on sauce
   $("h4#size-submit").click(function() {
@@ -90,6 +91,7 @@ $(document).ready(function() {
   //when pizza submit button is clicked
   $("form.pizza").submit(function(event) {
     event.preventDefault();
+
     var btn = $(this).find("button#pizza-submit[type=submit]:focus" );
 
     var size =  $("input:radio[name=size]:checked").val();
@@ -116,7 +118,7 @@ $(document).ready(function() {
       //pizza done, move one to confirmation
       $("form.pizza").slideUp();
       //output pizza names
-      $("ul#pizza-list").append("<li><span class='pizza-names'>" + newPizza.pizzaName + "</span></li>");
+      $("ul#pizza-list").append("<li class='pizza'><span class='pizza-names'>" + newPizza.pizzaName + "</span></li>");
 
       //change the size values from number to strings
       var sizeName = function() {
@@ -192,22 +194,20 @@ $(document).ready(function() {
     var newAddress = new Address(first, last, street, city, state, zipcode);
 
     var totalCost = 0
-    console.log('Stored Pizzas', myPizzas);
-
-    var totalCost = 0
     for(var i = 0; i < myPizzas.length; i++) {
       var myPizza = myPizzas[i];
       totalCost += myPizza.cost();
     };
-    console.log(totalCost);
 
-
-    $("form.address").slideUp();
-    $(".check-out").slideDown();
-    $(".name-check-out").text(newAddress.fullName());
-    $(".address-check-out").text(newAddress.fullAddress());
-    $(".cost-check-out").text(totalCost);
-
+    if (first === "" || last === "" || street === "" || city === "" || zipcode === "") {
+      alert("Enter the address.")
+    } else {
+      $("form.address").slideUp();
+      $(".check-out").slideDown();
+      $(".name-check-out").text(newAddress.fullName());
+      $(".address-check-out").text(newAddress.fullAddress());
+      $(".cost-check-out").text(totalCost);
+    };
   });
 });
 
