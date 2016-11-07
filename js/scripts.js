@@ -210,5 +210,3 @@ $(document).ready(function() {
     };
   });
 });
-
-//style
