@@ -1,4 +1,4 @@
-# Amy's Pizzaria?
+# Amy's Pizzaria
 ## by Amy Hwang
 
 # description of program
