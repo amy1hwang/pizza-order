@@ -1,5 +1,5 @@
 # Amy's Pizzaria
-## by Amy Hwang
+## by Amy Hwang | 11.4.2016
 
 # description of program
 This webpage is for customers who want to order pizza. Customers can customize their pizzas by selecting size, sauce, and toppings.
@@ -40,3 +40,4 @@ https://amy1hwang.github.io/pizza-order
 
 # copyright and license information
 Copyright (c) 2016 Amy Hwang. This software is licensed under the Github license.
+
